@@ -36,13 +36,13 @@ A premium animated **Coming Soon landing page** for **Chai Culture**, a luxury i
 ---
 
 ## 📂 Project Structure
-
+```
 chai-culture/
 │
 ├── index.html # Main webpage
 ├── script.js # Animations + form interaction
 └── README.md # Project info
-
+```
 
 ---
 
