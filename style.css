@@ -1,0 +1,342 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(to bottom, #f8f3e9, #efe3cf);
+  color: #3e2c23;
+  overflow-x: hidden;
+  opacity: 0;
+  transition: opacity 1.5s ease;
+}
+
+body.loaded {
+  opacity: 1;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: url("https://www.transparenttextures.com/patterns/gold-fabric.png");
+  opacity: 0.15;
+  pointer-events: none;
+  z-index: -1;
+}
+
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px 8%;
+  border-bottom: 1px solid rgba(62, 44, 35, 0.15);
+}
+
+.logo {
+  font-family: 'Great Vibes', cursive;
+  font-size: 34px;
+  color: #4b350f;
+}
+
+.subscribe {
+  font-size: 13px;
+  letter-spacing: 2px;
+  color: #c9a227;
+}
+
+
+.branding {
+  text-align: center;
+  padding: 35px 20px 5px;
+}
+
+.tagline {
+  font-family: 'Playfair Display', serif;
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.description {
+  max-width: 620px;
+  margin: auto;
+  font-size: 14px;
+  line-height: 1.6;
+  opacity: 0.85;
+}
+
+
+.gallery {
+  position: relative;
+  height: 240px;
+  margin: 10px 0 0;
+}
+
+.card {
+  position: absolute;
+  width: 150px;
+  padding: 8px;
+  border-radius: 12px;
+  background: white;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+  transition: transform 0.4s ease;
+}
+
+.card img {
+  width: 100%;
+  border-radius: 8px;
+  height: 150px;
+  object-fit: cover;
+}
+
+.card:nth-child(1) {
+  top: 20px;
+  left: 30%;
+  transform: rotate(-8deg);
+}
+
+.card:nth-child(2) {
+  top: 60px;
+  left: 45%;
+  transform: rotate(5deg);
+}
+
+.card:nth-child(3) {
+  top: 15px;
+  left: 60%;
+  transform: rotate(-6deg);
+}
+
+.card:hover {
+  transform: scale(1.05) rotate(0deg);
+}
+
+
+.coming {
+  text-align: center;
+  font-family: 'Great Vibes', cursive;
+  font-size: 180px;
+  margin-top: 20px;
+  line-height: 1;
+  padding: 40px 0 10px;
+  background-image: linear-gradient(120deg, #4b350f 30%, #c9a227 50%, #4b350f 70%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: shimmer 6s linear infinite, comingFade 1.4s ease forwards;
+  animation-delay: 0s, 1.6s;
+}
+
+@keyframes shimmer {
+  to {
+    background-position: 200% center;
+  }
+}
+
+@keyframes comingFade {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.launching {
+  text-align: center;
+  font-weight: 500;
+  letter-spacing: 3px;
+  color: #c9a227;
+  margin-bottom: 35px;
+  font-size: 14px;
+}
+
+
+.signup-section {
+  display: flex;
+  margin: 70px auto;
+  max-width: 1100px;
+  border: 1.5px solid #4b350f;
+  border-radius: 20px;
+  overflow: hidden;
+  background: #f8f3e9;
+}
+
+.signup-left,
+.signup-right {
+  flex: 1;
+  padding: 50px 40px;
+}
+
+.signup-left {
+  border-right: 1px solid #4b350f;
+}
+
+.signup-left h2 {
+  font-family: 'Playfair Display', serif;
+  margin-bottom: 30px;
+  font-size: 22px;
+}
+
+.name-row {
+  display: flex;
+  gap: 20px;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  margin-bottom: 20px;
+}
+
+.input-group label {
+  font-size: 13px;
+  margin-bottom: 6px;
+}
+
+.input-group input {
+  border: none;
+  border-bottom: 1px solid #4b350f;
+  background: transparent;
+  padding: 8px 2px;
+  font-size: 14px;
+}
+
+.input-group input:focus {
+  outline: none;
+  border-color: #c9a227;
+}
+
+.checkbox-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  margin-bottom: 25px;
+}
+
+.submit-btn {
+  background: #4b350f;
+  color: white;
+  border: none;
+  padding: 14px;
+  width: 100%;
+  border-radius: 30px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.submit-btn:hover {
+  background: #c9a227;
+  color: #3e2c23;
+}
+
+.signup-right {
+  text-align: center;
+}
+
+.icon-row {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-bottom: 25px;
+}
+
+.star {
+  width: 55px;
+  height: 55px;
+  background: #4b350f;
+  color: white;
+  font-size: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.socials i {
+  margin: 0 10px;
+  font-size: 18px;
+  color: #4b350f;
+  cursor: pointer;
+}
+
+.socials i:hover {
+  color: #c9a227;
+}
+
+.links a {
+  display: block;
+  font-size: 13px;
+  margin: 6px 0;
+  color: #4b350f;
+  text-decoration: underline;
+}
+
+#success-message {
+  margin-top: 15px;
+  font-size: 14px;
+  opacity: 0;
+  transition: 0.4s ease;
+}
+
+#success-message.show {
+  opacity: 1;
+}
+
+
+@media (max-width: 768px) {
+  .coming {
+    font-size: 64px;
+  }
+
+  .signup-section {
+    flex-direction: column;
+  }
+
+  .signup-left {
+    border-right: none;
+    border-bottom: 1px solid #4b350f;
+  }
+
+  .name-row {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 600px) {
+
+  .gallery {
+    position: relative;
+    height: auto !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    margin: 25px 0;
+  }
+
+  .gallery .card {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    transform: none !important;
+    width: 30% !important;
+    max-width: 110px;
+    padding: 6px;
+  }
+
+  .gallery .card img {
+    height: 110px !important;
+    object-fit: cover;
+  }
+}
